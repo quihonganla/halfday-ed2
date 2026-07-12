@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧旅遊規劃助手 - 地圖導覽</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">小半天旅遊規劃助手</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="map.html" class="active">當季特色景點</a></li>
+                <li><a href="recommend.html" class="active">附近民宿</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h2>🗺️ <span id="current-season">各季節</span> 推薦地圖導覽</h2>
+            
+            <div class="map-explore-container">
+                
+                <div class="map-interactive-wrapper">
+                    <div class="map-title-hint">📍 Select the Pin (請點擊地圖標點)</div>
+                    <div class="map-image-container" id="map-image-container">
+                        <img src="image_d1e001.png" alt="小半天導覽地圖" id="base-map-img">
+                        <div id="pins-loading-placeholder" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#666;">地圖載入中...</div>
+                    </div>
+                </div>
+
+                <div class="spots-sidebar">
+                    <div class="sidebar-title">✨ Recommend (本季熱門推薦)</div>
+                    <div class="sidebar-list" id="sidebar-list">
+                        </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="index.html" class="btn btn-secondary">返回重新選擇季節</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>&copy; 2026 旅遊規劃助手 | 專題製作</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

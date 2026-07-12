@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧旅遊規劃助手 - 規劃結果</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">小半天旅遊規劃助手</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="map.html">地圖導覽</a></li>
+                <li><a href="recommend.html">行程偏好</a></li>
+                <li><a href="result.html" class="active">規劃結果</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h2>🎉 您的專屬旅遊規劃書已生成！</h2>
+            
+            <div id="result-card" class="intro-section" style="border-left: 5px solid var(--accent-yellow); display: none;">
+                <h3 style="color: var(--primary-dark); margin-bottom: 1rem;">📋 行程概要清單</h3>
+                <p style="margin-bottom: 0.5rem;"><b>預計出發季節：</b> <span id="res-season">-</span></p>
+                <p style="margin-bottom: 0.5rem;"><b>目的地主景點：</b> <span id="res-spot">-</span></p>
+                <p style="margin-bottom: 0.5rem;"><b>下榻飯店選擇：</b> <span id="res-hotel">-</span></p>
+                <p style="margin-bottom: 0.5rem;"><b>規劃交通安排：</b> <span id="res-transport">-</span></p>
+                <p style="margin-bottom: 0.5rem;"><b>每日路線風格：</b> <span id="res-route">-</span></p>
+            </div>
+
+            <div id="no-data-alert" class="intro-section" style="text-align: center;">
+                <p>目前尚未有規劃紀錄，請先至首頁開始您的行程規劃。</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button id="btn-restart" class="btn">🔄 重新規劃新行程</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>&copy; 2026 旅遊規劃助手 | 專題製作</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

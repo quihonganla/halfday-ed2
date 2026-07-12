@@ -1,0 +1,938 @@
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    /* 將原本的 color: #333 改為較深的對比色，確保閱讀清晰 */
+    color: var(--primary-dark); 
+    /* 將原本的 background-color: #f4f4f4 改為呼叫變數 */
+    background-color: var(--primary-light); 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 主色調: 黑灰＋亮黃色 */
+:root {
+    --primary-dark: #000000;
+    --primary-light: #f4f4f4;
+    --accent-yellow: #ffffff;
+    --accent-silver: #C0C0C0;
+    --accent-red: #FF0000;
+}
+
+/* 頁首樣式 */
+header {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-yellow);
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--accent-yellow);
+}
+
+nav ul li a.active {
+    color: var(--accent-yellow);
+    border-bottom: 2px solid var(--accent-yellow);
+}
+
+/* 主內容區 */
+main {
+    flex: 1;
+    padding:  0;
+}
+
+/* 英雄區域 */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('首頁照片.jpg') no-repeat center center/cover;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+/* 按鈕樣式 */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-yellow);
+    color: var(--primary-dark);
+    padding: 0.7rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--accent-red);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* 內容區域 */
+.content-section {
+    padding: 2rem ;
+    max-width: 1700px;
+    margin: auto;
+}
+
+.content-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+    position: relative;
+}
+
+.content-section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-yellow);
+    margin: 0.5rem auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--accent-yellow);
+}
+
+.card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+/* 模擬地圖區塊 */
+.mock-map {
+    background: #e0f2fe;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #7dd3fc;
+    margin-bottom: 2.5rem;
+    border-radius: 8px;
+    color: #0369a1;
+    font-weight: bold;
+}
+
+/* 介紹與結果顯示區域 */
+.intro-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* 聯絡表單與下拉選單 */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* 頁尾樣式 */
+footer {
+    background-color: var(--primary-dark);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent-yellow);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ==========================================
+   互動式地圖與側邊欄排版 (對應手稿設計)
+   ========================================== */
+.map-explore-container {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1.5rem auto 2.5rem auto;
+    max-width: 1200px;
+    align-items: stretch;
+}
+
+/* 左側地圖包裝層 */
+.map-interactive-wrapper {
+    flex: 1.6;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+}
+
+.map-title-hint {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid var(--accent-yellow);
+    padding-left: 8px;
+}
+
+/* 地圖容器（設定相對定位，讓大頭針能精準依百分比定位） */
+.map-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #e5e7eb;
+}
+
+.map-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 右側側邊推薦欄 */
+.spots-sidebar {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    max-height: 600px; /* 限制高度，使其在內容多時可滾動 */
+}
+
+.sidebar-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-yellow);
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    padding-right: 0.4rem;
+}
+
+/* 側邊清單滾動條美化 */
+.sidebar-list::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.sidebar-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.sidebar-list::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* 側邊景點卡片 */
+.sidebar-spot-card {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* 懸停或連動高亮時的視覺效果 */
+.sidebar-spot-card:hover, 
+.sidebar-spot-card.highlighted {
+    background-color: #fffdf0;
+    border-color: var(--accent-yellow);
+    transform: translateX(4px);
+    box-shadow: 0 3px 8px rgba(255, 215, 0, 0.15);
+}
+
+.sidebar-spot-card h4 {
+    color: var(--primary-dark);
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+}
+
+.sidebar-spot-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.45;
+}
+
+/* 地圖大頭針標點 (Pins) */
+.map-pin-wrapper {
+    position: absolute;
+    transform: translate(-50%, -100%); /* 精準定位：讓圖示底部尖端對齊坐標 */
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+.pin-icon {
+    font-size: 30px;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+    transition: transform 0.2s ease;
+    display: inline-block;
+}
+
+/* 標點啟動或連動高亮 */
+.map-pin-wrapper:hover .pin-icon, 
+.map-pin-wrapper.highlighted .pin-icon {
+    transform: scale(1.3) translateY(-3px);
+    filter: drop-shadow(0px 4px 8px rgba(255, 0, 0, 0.5));
+}
+
+/* 大頭針文字浮動提示 (Tooltip) */
+.pin-tooltip {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(34, 34, 34, 0.9);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease, bottom 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.pin-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(34, 34, 34, 0.9) transparent transparent transparent;
+}
+
+/* 懸停時秀出文字提示 */
+.map-pin-wrapper:hover .pin-tooltip, 
+.map-pin-wrapper.highlighted .pin-tooltip {
+    opacity: 1;
+    bottom: 120%;
+}
+
+/* RWD 響應式：手機板自動轉為上下排列 */
+@media (max-width: 992px) {
+    .map-explore-container {
+        flex-direction: column;
+    }
+    .spots-sidebar {
+        max-height: none;
+    }
+}
+/* ==========================================
+   保時捷 Premium 風格升級：互動地圖與側邊欄
+   ========================================== */
+
+/* 頂部導覽列升級：引入保時捷愛用的高級半透明毛玻璃 (Glassmorphism) */
+header {
+    background-color: rgba(34, 34, 34, 0.8) !important;
+    backdrop-filter: blur(12px); /* 讓背景模糊，極具現代科技感 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* 雙欄主容器佈局 */
+.map-dashboard-container {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr; /* 左地圖寬，右推薦欄窄 */
+    gap: 2rem;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* 地圖包覆區 (相對定位基準) */
+.interactive-map-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.map-title-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    z-index: 10;
+}
+
+.responsive-map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 大頭針動畫與樣式 */
+.map-pin {
+    position: absolute;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 20;
+    transform: translate(-50%, -100%); /* 精準對齊腳尖 */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* 仿保時捷的高光/懸停微互動 (Micro-interaction) */
+.map-pin:hover {
+    transform: translate(-50%, -115%) scale(1.3); /* 懸停時優雅往上彈一下並放大 */
+    filter: drop-shadow(0 8px 12px rgba(255, 0, 0, 0.5)) saturate(1.5);
+}
+
+/* 側邊推薦欄樣式 */
+.recommend-sidebar {
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid #eaeaea;
+}
+
+.recommend-sidebar h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 4px solid var(--accent-yellow);
+    padding-left: 10px;
+}
+
+/* 推薦項目卡片 */
+.recommend-item {
+    background: #ffffff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+    /* 保時捷般的平滑過渡，拒絕突兀的切換 */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+/* 懸停與動態被點選（Active）的頂級質感表現 */
+.recommend-item:hover, .recommend-item.active {
+    background: var(--primary-dark);
+    color: #ffffff;
+    border-color: var(--primary-dark);
+    transform: translateX(5px); /* 輕微向右平移，指引感極強 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.recommend-item:hover h4, .recommend-item.active h4 {
+    color: var(--accent-yellow);
+}
+
+.recommend-item p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: #666;
+    transition: color 0.3s;
+}
+.recommend-item:hover p, .recommend-item.active p {
+    color: #ccc;
+}
+
+/* 響應式：手機版自動切換回上下單欄，不破版 */
+@media (max-width: 900px) {
+    .map-dashboard-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 1. 頂部導覽列：導入大廠最愛用的超高級磨砂玻璃質感 (Glassmorphism) */
+header {
+    background-color: rgba(34, 34, 34, 0.85) !important;
+    backdrop-filter: blur(15px); /* 背景高斯模糊 */
+    -webkit-backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 2. 地圖儀表板主容器 */
+.map-dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 黃金雙欄比例：左地圖、右側欄 */
+    gap: 0;
+    background: #ffffff;
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    margin-top: 1rem;
+}
+
+/* 3. 地圖包覆區 (精確定位點基準) */
+.interactive-map-wrapper {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fdfdfd;
+    border: 1px solid #eef2f6;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+}
+
+.map-title-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(17, 17, 17, 0.85);
+    color: var(--accent-yellow);
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.responsive-map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 4. 大頭針奢華微互動 (Micro-interactions) */
+.map-pin {
+    position: absolute;
+    font-size: 2.2rem;
+    cursor: pointer;
+    z-index: 20;
+    transform: translate(-50%, -100%); /* 尖端完美對齊百分比座標點 */
+    /* 仿超跑油門般的平滑過渡曲線 */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.25));
+}
+
+/* 懸停時優雅往上彈跳、放大並強化飽和度 */
+.map-pin:hover {
+    transform: translate(-50%, -118%) scale(1.35);
+    filter: drop-shadow(0 12px 16px rgba(255, 215, 0, 0.6)) saturate(1.3);
+}
+
+/* 5. 右側推薦景點側邊欄 */
+.recommend-sidebar {
+    display: flex;
+    flex-direction: column;
+    background: #fbfbfd;
+    border-radius: 14px;
+    padding: 1.6rem;
+    border: 1px solid #f0f0f2;
+    max-height: 650px; /* 限制高度防止無限延伸 */
+}
+
+.recommend-sidebar h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-left: 4px solid var(--accent-yellow);
+    padding-left: 12px;
+    font-weight: 700;
+}
+
+.recommend-list {
+    overflow-y: auto; /* 景點過多時自動允許內部垂直滾動 */
+    padding-right: 4px;
+}
+
+/* 自訂高質感側邊欄滾動條 */
+.recommend-list::-webkit-scrollbar {
+    width: 5px;
+}
+.recommend-list::-webkit-scrollbar-thumb {
+    background: #e2e2e7;
+    border-radius: 10px;
+}
+
+/* 6. 推薦景點精緻卡片 */
+.recommend-item {
+    background: #ffffff;
+    padding: 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9e9ee;
+    cursor: pointer;
+    /* 保時捷高階動畫工藝：完美拒絕突兀的色彩切換 */
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 卡片懸停與被點擊啟用（Active）時的頂級視覺擴展 */
+.recommend-item:hover, .recommend-item.active {
+    background: var(--primary-dark) !important;
+    color: #ffffff !important;
+    border-color: var(--primary-dark);
+    transform: translateX(6px); /* 輕盈向右遞進，創造極佳的引導感 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.recommend-item h4 {
+    font-size: 1.05rem;
+    color: #1d1d1f;
+    transition: color 0.3s;
+}
+.recommend-item:hover h4, .recommend-item.active h4 {
+    color: var(--accent-yellow) !important;
+}
+
+.recommend-item p {
+    font-size: 0.88rem;
+    margin-top: 0.5rem;
+    color: #6e6e73;
+    line-height: 1.5;
+    transition: color 0.3s;
+}
+.recommend-item:hover p, .recommend-item.active p {
+    color: #d2d2d7 !important;
+}
+
+/* 7. 行動裝置響應式斷點 (RWD) */
+@media (max-width: 960px) {
+    .map-dashboard-container {
+        grid-template-columns: 1fr; /* 平板手機上自動還原為上下滿版，防擠壓 */
+        gap: 1.5rem;
+    }
+    .recommend-sidebar {
+        max-height: none;
+    }
+}
+/* ==========================================================================
+   🎋 跑馬燈季節卡片高級工藝控制
+   ========================================================================== */
+
+/* 1. 卡片主容器：設定固定高度並裁切溢出圖片 */
+.season-card {
+    position: relative;
+    height: 240px; /* 您可以根據版面需求微調高度 */
+    overflow: hidden;
+    border-radius: 14px;
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    /* 繼承您原有的保時捷順滑過渡動效 */
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 懸停卡片時的微幅升起與發光效果 */
+.season-card:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* 2. 左上角季節玻璃帷幕標籤 */
+.season-badge {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 10; /* 確保浮在模糊背景之上 */
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    padding: 0.5rem 1.1rem;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    pointer-events: none; /* 讓點擊事件可以穿透標籤觸發卡片點擊 */
+}
+
+/* 3. 跑馬燈容器：處理「模糊」與「調暗」 */
+.marquee-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* 核心特效：高斯模糊 6px + 降低亮度至 60% 確保左上角白字清晰 readable */
+    filter: blur(6px) brightness(0.6);
+    /* 重要技巧：將內容稍微放大 1.15 倍，完美消除邊緣因高斯模糊產生的白邊與毛邊 */
+    transform: scale(1.15);
+    transition: filter 0.4s ease;
+}
+
+/* 當滑鼠懸停時，背景自動變清晰一點點，創造驚艷的互動感 */
+.season-card:hover .marquee-container {
+    filter: blur(2px) brightness(0.7);
+}
+
+/* ==========================================================================
+   📸 季節卡片：純 CSS 相片淡入淡出輪播控制
+   ========================================================================== */
+
+/* 1. 跑馬燈容器：調低模糊度、調整亮度 */
+.marquee-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    
+    /* ✨ 關鍵修改：降低模糊度至 2px（原為 6px） */
+    /* 同時將亮度稍微調暗至 0.5，確保左上角的白色季節標籤依然清晰、好閱讀 */
+    filter: blur(2px) brightness(0.5); 
+    
+    /* 因為模糊度變小了，邊緣白邊變少，防禦性放大調整為 1.05 倍即可 */
+    transform: scale(1.05); 
+    transition: filter 0.4s ease;
+}
+
+/* 滑鼠懸停時，照片變得更清晰 (模糊歸零) */
+.season-card:hover .marquee-container {
+    filter: blur(0px) brightness(0.6);
+}
+
+/* 2. 照片疊加與動畫初始化 */
+.marquee-container img {
+    position: absolute; /* ✨ 讓所有照片絕對定位，重疊在同一個位子上 */
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    
+    opacity: 0; /* 預設先隱藏 */
+    animation: imageFade 12s linear infinite; /* 執行 12 秒的循環淡入淡出動畫 */
+}
+
+/* 3. 設定每張照片的出场時差 (以 3 張照片、總長 12 秒為例) */
+.marquee-container img:nth-child(1) {
+    animation-delay: 0s;
+}
+.marquee-container img:nth-child(2) {
+    animation-delay: 4s; /* 4秒後第二張登場 */
+}
+.marquee-container img:nth-child(3) {
+    animation-delay: 8s; /* 8秒後第三張登場 */
+}
+
+/* 4. 淡入淡出核心動畫 */
+@keyframes imageFade {
+    0% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 1; /* 快速淡入 */
+    }
+    33% {
+        opacity: 1; /* 停留顯示 */
+    }
+    41% {
+        opacity: 0; /* 溫柔淡出 */
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* ==========================================================================
+   🔒 強制鎖定 2x2 四季矩陣（不隨螢幕大小變動）
+   ========================================================================== */
+.season-grid {
+    display: grid !important;
+    /* 強制設定為 2 欄，每欄各佔 50% 寬度 (1fr) */
+    grid-template-columns: repeat(2, 1fr) !important; 
+    /* 強制設定為 2 列 */
+    grid-template-rows: repeat(2, 1fr) !important;
+    
+    gap: 1.25rem !important; /* 四個網格之間的間距，可自行調整 */
+    width: 100% !important;
+    max-width: 1200px; /* 限制網頁最大寬度，避免在大螢幕上拉得太寬 */
+    margin: 0 auto; /* 讓整個大區塊在網頁居中 */
+}
+
+/* 配合 2x2 嚴格網格，微調卡片高度適應性 */
+.season-card {
+    height: 200px !important; /* 固定每張卡片高度，確保不論寬度如何，上下都一樣高 */
+}
+
+/* 為了防止跑馬燈圖片在 narrow 螢幕（如手機）上擠壓變形，確保縮圖完美填滿 */
+.marquee-track img {
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* ==========================================================================
+   ⚠️ 重要：防禦性程式碼（防止舊的行動裝置響應式設定把網格打散）
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 強制在手機板也必須維持 2 欄，拒絕變成單欄垂直排列 */
+    .season-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* 手機螢幕較小，稍微縮小字體與卡片高度，避免畫面太擠 */
+    .season-card {
+        height: 140px !important; 
+    }
+    .season-badge {
+        font-size: 0.85rem !important;
+        padding: 0.3rem 0.7rem !important;
+        top: 0.75rem !important;
+        left: 0.75rem !important;
+    }
+}

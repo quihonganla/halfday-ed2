@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧旅遊規劃助手 - 住宿推薦</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">小半天旅遊規劃助手</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="recommend.html" class="active">附近民宿</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h2>推薦民宿</h2>
+            <div class="map-dashboard-container" style="margin-bottom: 2.5rem;">
+                <!-- 左側：Google 地圖嵌入區 -->
+                <div class="interactive-map-wrapper" style="min-height: 450px;">
+                    <div class="map-title-tag">📍 小半天民宿區域地圖 (可放大縮小與拖曳)</div>
+                    <!-- 使用 Google Maps 官方 Embed 搜尋，動態抓取小半天所有民宿 -->
+                    <iframe 
+                        src="https://maps.google.com/maps?q=南投鹿谷小半天%20民宿&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; position: absolute; top:0; left:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>&copy; 2026 旅遊規劃助手 | 專題製作</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
